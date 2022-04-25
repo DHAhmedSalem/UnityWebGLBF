@@ -3,19 +3,22 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Butterfly test WebGL</title>
+    <title>Unity WebGL Player | Butterfly test WebGL</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=960 height=600></canvas>
+      <canvas id="unity-canvas" width=820 height=820></canvas>
       <div id="unity-loading-bar">
+        <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
           <div id="unity-progress-bar-full"></div>
         </div>
       </div>
       <div id="unity-warning"> </div>
       <div id="unity-footer">
+        <div id="unity-webgl-logo"></div>
         <div id="unity-fullscreen-button"></div>
         <div id="unity-build-title">Butterfly test WebGL</div>
       </div>
@@ -53,11 +56,11 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/Builds.loader.js";
+      var loaderUrl = buildUrl + "/Children butterfly.loader.js";
       var config = {
-        dataUrl: buildUrl + "/Builds.data",
-        frameworkUrl: buildUrl + "/Builds.framework.js",
-        codeUrl: buildUrl + "/Builds.wasm",
+        dataUrl: buildUrl + "/Children butterfly.data",
+        frameworkUrl: buildUrl + "/Children butterfly.framework.js",
+        codeUrl: buildUrl + "/Children butterfly.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "Butterfly test WebGL",
@@ -77,10 +80,10 @@
         // Avoid draining fillrate performance on mobile devices,
         // and default/override low DPI mode on mobile browsers.
         config.devicePixelRatio = 1;
-        //unityShowBanner('WebGL builds are not supported on mobile devices.');
+        unityShowBanner('WebGL builds are not supported on mobile devices.');
       } else {
-        canvas.style.width = "960px";
-        canvas.style.height = "600px";
+        canvas.style.width = "820px";
+        canvas.style.height = "820px";
       }
       loadingBar.style.display = "block";
 
