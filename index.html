@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | webgl test project delete</title>
+    <title>Unity WebGL Player | Butterfly test WebGL</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
@@ -56,11 +56,18 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/UnityWebGLBF.loader.js";
+      
+      if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+      //buildUrl = "Build_ios"
+      //alert("IOS user!")
+      }
+      
+      var loaderUrl = buildUrl + "/Builds.loader.js";
+
       var config = {
-        dataUrl: buildUrl + "/UnityWebGLBF.data",
-        frameworkUrl: buildUrl + "/UnityWebGLBF.framework.js",
-        codeUrl: buildUrl + "/UnityWebGLBF.wasm",
+        dataUrl: buildUrl + "/Builds.data",
+        frameworkUrl: buildUrl + "/Builds.framework.js",
+        codeUrl: buildUrl + "/Builds.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "webgl test project delete",
@@ -74,6 +81,7 @@
       // happening inside the engine, and you would instead like to size up
       // the canvas DOM size and WebGL render target sizes yourself.
       // config.matchWebGLToCanvasSize = false;
+
 
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         container.className = "unity-mobile";
