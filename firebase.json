@@ -1,0 +1,23 @@
+{
+    "hosting": {
+	"public": "./",
+	"ignore": [
+	    "firebase.json",
+	    "**/.*",
+	    "**/node_modules/**",
+	    "*.txt",
+	    "*.zip",
+	    "*.md"
+	    
+	],
+	"headers": [ {
+	    "source": "**",
+	    "headers": [ {
+		"key": "Access-Control-Allow-Origin",
+		"value": "*"
+	    } ]
+	} ]
+
+	
+    }
+}
